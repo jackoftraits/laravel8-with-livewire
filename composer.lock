@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fc1d31b926c2f1a831b864950ced921",
+    "content-hash": "d65bcd3fa7b6ee6751db876a88898336",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5161,6 +5161,59 @@
                 }
             ],
             "time": "2020-09-18T14:27:32+00:00"
+        },
+        {
+            "name": "te7a-houdini/laravel-trix",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/amaelftah/laravel-trix.git",
+                "reference": "30991cd12edbab7d877604433d6041bfe8441ef9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/amaelftah/laravel-trix/zipball/30991cd12edbab7d877604433d6041bfe8441ef9",
+                "reference": "30991cd12edbab7d877604433d6041bfe8441ef9",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.8.0|~6.0|~7.0|~8.0",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.5|~4.0|~5.0|~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Te7aHoudini\\LaravelTrix\\LaravelTrixServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Te7aHoudini\\LaravelTrix\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ahmed Abd El Ftah",
+                    "email": "ahmedabdelftah95165@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "trix editor for laravel inspired by ActionText for rails",
+            "homepage": "https://github.com/te7ahoudini/laravel-trix",
+            "keywords": [
+                "laravel-trix",
+                "te7a-houdini"
+            ],
+            "time": "2020-09-15T19:12:04+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

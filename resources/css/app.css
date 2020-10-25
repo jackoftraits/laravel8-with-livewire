@@ -1,3 +1,16 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.body-content {
+    max-height: 300px !important;
+    overflow-y: scroll;
+}
+
+.trix-button-group--history-tools {
+    display: none !important;
+}
+
+.error {
+    color: red;
+}
