@@ -24,7 +24,11 @@
                             @if ($data->count())
                                 @foreach ($data as $item)
                                     <tr>
-                                        <td class="px-6 py-4 text-sm whitespace-no-wrap">{{ $item->title }}</td>
+                                        <td class="px-6 py-4 text-sm whitespace-no-wrap">
+                                            {{ $item->title }}
+                                            {!! $item->is_default_home ? '<span class="text-green-400 text-xs font-bold">[Default Home Page]</span>':''!!}
+                                            {!! $item->is_default_not_found ? '<span class="text-red-400 text-xs font-bold">[Default 404 Page]</span>':''!!}
+                                        </td>
                                         <td class="px-6 py-4 text-sm whitespace-no-wrap">
                                             <a
                                                 class="text-indigo-600 hover:text-indigo-900"
@@ -84,6 +88,18 @@
                     <input wire:model="slug" class="form-input flex-1 block w-full rounded-none rounded-r-md transition duration-150 ease-in-out sm:text-sm sm:leading-5" placeholder="url-slug">
                 </div>
                 @error('slug') <span class="error">{{ $message }}</span> @enderror
+            </div>
+            <div class="mt-4">
+                <label>
+                    <input class="form-checkbox" type="checkbox" value="{{ $isSetToDefaultHomePage }}" wire:model="isSetToDefaultHomePage"/>
+                    <span class="ml-2 text-sm text-gray-600">Set as the default home page</span>
+                </label>
+            </div>
+            <div class="mt-4">
+                <label>
+                    <input class="form-checkbox" type="checkbox" value="{{ $isSetToDefaultNotFoundPage }}" wire:model="isSetToDefaultNotFoundPage"/>
+                    <span class="ml-2 text-sm text-red-600">Set as the default 404 error page</span>
+                </label>
             </div>
             <div class="mt-4">
                 <x-jet-label for="title" value="{{ __('Content') }}" />
