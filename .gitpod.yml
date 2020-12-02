@@ -1,0 +1,6 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: composer install
+    command: composer install ; php artisan key:generate ; php artisan migrate ; php artisan serv
