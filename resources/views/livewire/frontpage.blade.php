@@ -15,10 +15,12 @@
         </div>
         <div class="flex justify-end sm:w-8/12">
             {{-- Top Navigation --}}
-            <ul class="hidden sm:block sm:text-left text-gray-200 text-xs">
-                <a href="{{ url('/login')}}">
-                    <li class="cursor-pointer px-4 py-2 hover:underline">Login</li>
-                </a>
+            <ul class="hidden sm:flex sm:text-left text-gray-200 text-xs">
+                @foreach ($topNavLinks as $item)
+                    <a href="{{ url('/'.$item->slug) }}">
+                        <li class="cursor-pointer px-4 py-2 hover:bg-gray-800">{{ $item->label }}</li>
+                    </a>
+                @endforeach 
             </ul>
         </div>
     </nav>
@@ -26,36 +28,30 @@
         <aside class="bg-gray-900 text-gray-700 divide-y divide-gray-700 divide-dashed sm:w-4/12 md:w-3/12 lg:w-2/12">
             {{-- Desktop Web View --}}
             <ul class="hidden text-gray-200 text-xs sm:block sm:text-left">
-                <a href="{{ url('/home')}}">
-                    <li class="cursor-pointer px-4 py-2 hover:bg-gray-800">Home</li>
-                </a> 
-                <a href="{{ url('/about')}}">
-                    <li class="cursor-pointer px-4 py-2 hover:bg-gray-800">About</li>
-                </a> 
-                <a href="{{ url('/contact')}}">
-                    <li class="cursor-pointer px-4 py-2 hover:bg-gray-800">Contact</li>
-                </a> 
+                @foreach ($sideBarLinks as $item)
+                    <a href="{{ url('/'.$item->slug) }}">
+                        <li class="cursor-pointer px-4 py-2 hover:bg-gray-800">{{ $item->label }}</li>
+                    </a>
+                @endforeach                
             </ul>
 
             {{-- Mobile Web View --}}
             <div :class="show ? 'block' : 'hidden'" class="pb-3 divide-y divide-gray-800 block sm:hidden">
                 <ul class="text-gray-200 text-xs">
-                    <a href="{{ url('/home')}}">
-                        <li class="cursor-pointer px-4 py-2 hover:bg-gray-800">Home</li>
-                    </a> 
-                    <a href="{{ url('/about')}}">
-                        <li class="cursor-pointer px-4 py-2 hover:bg-gray-800">About</li>
-                    </a>
-                    <a href="{{ url('/contact')}}">
-                        <li class="cursor-pointer px-4 py-2 hover:bg-gray-800">Contact</li>
-                    </a> 
+                    @foreach ($sideBarLinks as $item)
+                        <a href="{{ url('/'.$item->slug) }}">
+                            <li class="cursor-pointer px-4 py-2 hover:bg-gray-800">{{ $item->label }}</li>
+                        </a>
+                    @endforeach      
                 </ul>
 
                 {{-- Top Navigation Mobile Web View --}}
                 <ul class="text-gray-200 text-xs">
-                    <a href="{{ url('/login')}}">
-                        <li class="cursor-pointer px-4 py-2 hover:bg-gray-800">Login</li>
-                    </a> 
+                    @foreach ($topNavLinks as $item)
+                        <a href="{{ url('/'.$item->slug) }}">
+                            <li class="cursor-pointer px-4 py-2 hover:bg-gray-800">{{ $item->label }}</li>
+                        </a>
+                    @endforeach 
                 </ul>
             </div>
         </aside>
