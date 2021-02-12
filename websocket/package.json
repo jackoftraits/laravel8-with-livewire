@@ -1,0 +1,17 @@
+{
+    "name": "websocket_for_our_cms",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon eventNotificationServer.js",
+        "eventNotification": "nodemon eventNotificationServer.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "html-entities": "2.1.0",
+        "websocket": "1.0.33"
+    }
+}
