@@ -12,6 +12,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/chat.css') }}">
         @trixassets
         @livewireStyles
 
@@ -33,24 +34,17 @@
             <main>
                 <div class="event-notification-box fixed right-0 top-0 text-white bg-green-400 mt-3 mr-3 px-5 py-3 rounded-sm shadow-lg transform duration-700 opacity-0"></div>
                 {{ $slot }}
+                @livewire('chat-component')
             </main>
         </div>
 
         @stack('modals')
 
         @livewireScripts
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="{{ url('/js/socket.js') }}"></script>
+        @stack('chat-websocket')
         <script>
-            
-            /**
-             * Initilize a web socket client 
-             */
-            function clientSocket(config = {}) {
-                let route = config.route || "127.0.0.1";
-                let port = config.port || "3280";
-                window.Websocket = window.WebSocket || window.MozWebSocket;
-                return new WebSocket("ws://" + route + ":" + port);
-            }
 
             // Instantiate a connection
             var connection = clientSocket();            

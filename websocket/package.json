@@ -5,13 +5,16 @@
     "main": "index.js",
     "scripts": {
         "start": "nodemon eventNotificationServer.js",
-        "eventNotification": "nodemon eventNotificationServer.js"
+        "eventNotification": "nodemon eventNotificationServer.js",
+        "chatServer": "nodemon chatServer.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
         "html-entities": "2.1.0",
+        "mysql": "2.18.1",
+        "uniqid": "5.3.0",
         "websocket": "1.0.33"
     }
 }
